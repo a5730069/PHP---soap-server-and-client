@@ -8,7 +8,7 @@
 </form>
 </head>
 <?php
-require_once "src/nusoap.php";
+require_once "nusoap.php";
 $client = new nusoap_client("http://localhost:8080/www/soap/server.php?wsdl");
 $error = $client->getError();
 		if ($error) {
