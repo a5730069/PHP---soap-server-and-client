@@ -4,8 +4,8 @@ require_once "nusoap.php";
 //Connect to the database
 function query_db($query_text){
 $host = "127.0.0.1";
-$user = "root";                                 //Your Cloud 9 username
-$pass = "159357123";                                         //Remember, there is NO password by default!
+$user = "root";                                 
+$pass = "159357123";                                         
 $db = "van_operator";                                  //Your database name you want to connect to
 $port = 3306;                                       //The port #. It is always 3306
 
@@ -106,17 +106,7 @@ function get_timetable($id_array){
 }
 
 
-// function getProd($category) {
-//     if ($category == "books") {
-//         return join(",", array(
-//             "The WordPress Anthology",
-//             "PHP Master: Write Cutting Edge Code",
-//             "Build Your Own Website the Right Way"));
-//     }
-//     else {
-//         return "No products listed under that category";
-//     }
-// }
+
 
 $server = new soap_server();
 $server->configureWSDL("van_operator", "urn:van_operator");
@@ -153,15 +143,6 @@ $server->register("get_timetable",
 //           "Password"=>"xsd:string"),
 //     array("return"=>"xsd:string")
 
-// );
-// $server->register("getProd",
-//     array("category" => "xsd:string"),
-//     array("return" => "xsd:string"),
-//     "urn:productlist",
-//     "urn:productlist#getProd",
-//     "rpc",
-//     "encoded",
-//     "Get a listing of products by category");
-    
+
  
 @$server->service(file_get_contents("php://input"));
