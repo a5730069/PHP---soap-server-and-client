@@ -1,5 +1,5 @@
 <?php
-require_once "src/nusoap.php";
+require_once "nusoap.php";
 
 //Connect to the database
 function query_db($query_text){
